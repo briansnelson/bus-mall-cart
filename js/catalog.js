@@ -40,7 +40,11 @@ function addSelectedItemToCart() {
   // DONE: suss out the item picked from the select list
   let itemPicked = document.getElementById('items').value;
   console.log(itemPicked);
-  // TODO: get the quantity
+  // DONE: get the quantity
+  let itemQuantity = document.getElementById('quantity').value;
+  console.log(itemQuantity);
+  
+
   // TODO: using those, add one item to the Cart
 }
 
