@@ -35,26 +35,33 @@ function handleSubmit(event) {
 
 }
 
-// TODO: Add the selected item and quantity to the cart
+// DONE: Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
   // DONE: suss out the item picked from the select list
   let itemPicked = document.getElementById('items').value;
   console.log(itemPicked);
   // DONE: get the quantity
   let itemQuantity = document.getElementById('quantity').value;
-  console.log(itemQuantity);
-  
-
-  // TODO: using those, add one item to the Cart
+  // console.log(itemQuantity);
+  // DONE: using those, add one item to the Cart
+  cart.addItem(itemPicked, itemQuantity);
 }
 
-// TODO: Update the cart count in the header nav with the number of items in the Cart
-function updateCounter() {}
+// DONE: Update the cart count in the header nav with the number of items in the Cart
+function updateCounter() {
+  document.getElementById('itemCount').textContent = `:  ${cart.items.length}`;
+}
 
-// TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
+// DONE: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
-  // TODO: Get the item and quantity from the form
-  // TODO: Add a new element to the cartContents div with that information
+  // DONE: Get the item and quantity from the form
+  let itemPickedPreview = document.getElementById('items').value;
+  let itemQuantityPreview = document.getElementById('quantity').value;
+  let cartContents = document.getElementById('cartContents');
+  let cartPreview = document.createElement('p');
+  cartPreview.innerHTML = `${itemPickedPreview} : ${itemQuantityPreview}`;
+  cartContents.appendChild(cartPreview);
+  // DONE: Add a new element to the cartContents div with that information
 }
 
 // Set up the "submit" event listener on the form.
